@@ -6,7 +6,7 @@ data class Students(
     val firstName : String = "Undefined",
     val secondName : String = "Undefined",
     val gradeLevel : Int = 0,
-    val teacherName : String = "Undefined",
+    val teacherName : String = "Undefined" ,
     val courseGrade : Float = 0.0f,
 
 )

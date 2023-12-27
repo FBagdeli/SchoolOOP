@@ -6,16 +6,16 @@ fun main() {
     println(listOfManager)
 
     val listOfTeachers = listOf(
-        Teacher(1,"Ershad","Nasri","Kotlin",3),
-        Teacher(2,"Vin","Norman","Android Developer",1),
-        Teacher(3,"Shahi","Bagdeli","C#",3),
-        Teacher(4,"Mohammad","Javad","Administrator",2),
+        Teacher(1,"Ershad","Nasri","Kotlin"),
+        Teacher(2,"Vin","Norman","Android Developer"),
+        Teacher(3,"Shahi","Bagdeli","C#"),
+        Teacher(4,"Mohammad","Javad","Administrator"),
     )
 
     val listOfStudents = listOf(
-        Students(1,"Farshad","Bagdeli",3,listOfTeachers[0].firstName +" "+ listOfTeachers[0].secondName,20f),
-        Students(2,"Azam","Sheikhi",3,listOfTeachers[1].firstName + listOfTeachers[1].secondName,18.5f),
-        Students(3,"Korosh","Fouladi",3,listOfTeachers[2].firstName + listOfTeachers[2].secondName,15f)
+        Students(1,"Farshad","Bagdeli",3,listOfTeachers[0].fullName,20f),
+        Students(2,"Azam","Sheikhi",3,listOfTeachers[1].fullName,18.5f),
+        Students(3,"Korosh","Fouladi",3,listOfTeachers[2].fullName,15f)
     )
 
     studentGradesList(listOfStudents)

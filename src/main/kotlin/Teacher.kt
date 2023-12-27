@@ -1,11 +1,9 @@
 
 
-data class Teacher(
-
-    val teacherId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val courseName : String = "Undefined",
-    val gradeLevel : Int = 0,
-
+ data class Teacher(
+private val teacherId : Int = 1,
+    private val firstName : String = "Undefined",
+    private val secondName : String = "Undefined",
+    private val courseName : String = "Undefined",
+    val fullName :String = "$firstName $secondName"
 )
