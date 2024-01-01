@@ -1,32 +1,23 @@
-fun main() {
+fun main(){
+    val manager = Manager("MJ","Big")
+    val manager1 = Manager("MJ1","Big2")
+    val teacher = Teacher("Ershad","Nasiri",manager)
+    val teacher2 = Teacher("Ershad2","Nasiri20",manager1)
 
-    val listOfManager = listOf(
-        Manager(1,"Dariush","Pahlavi")
-    )
-    println(listOfManager)
+    val student = Student(teacher, "Farshad","Bagdeli",20)
+    val student2 = Student(teacher2,"Babak","Khoramdin",20)
+    val student3 = Student(teacher,"Arash","Shivatir",20)
+    val student4 = Student(teacher2,"Artemis","DaryaSalar",20)
 
-    val listOfTeachers = listOf(
-        Teacher(1,"Ershad","Nasri","Kotlin",3),
-        Teacher(2,"Vin","Norman","Android Developer",1),
-        Teacher(3,"Shahi","Bagdeli","C#",3),
-        Teacher(4,"Mohammad","Javad","Administrator",2),
-    )
+    student.studentInfo()
+    student2.studentInfo()
 
-    val listOfStudents = listOf(
-        Students(1,"Farshad","Bagdeli",3,listOfTeachers[0].firstName +" "+ listOfTeachers[0].secondName,20f),
-        Students(2,"Azam","Sheikhi",3,listOfTeachers[1].firstName + listOfTeachers[1].secondName,18.5f),
-        Students(3,"Korosh","Fouladi",3,listOfTeachers[2].firstName + listOfTeachers[2].secondName,15f)
-    )
-
-    studentGradesList(listOfStudents)
+    val list = listOf(student,student2,student3,student4)
+    studentsScore(list)
 }
+fun studentsScore(lists: List<Student>){
 
-fun studentGradesList(list: List<Students>){
-    val int = list.lastIndex
-
-    println("Students Grade List: ")
-    for (i in 0.. int ){
-        println("   ${list[i].firstName} ${list[i].secondName} is ${list[i].courseGrade} with ${list[i].teacherName}")
+    for (list in lists){
+        println("${list.studentLastName} Score is : ${list.studentScore}")
     }
-
 }
