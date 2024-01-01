@@ -1,12 +1,17 @@
-import org.intellij.lang.annotations.Identifier
+open class Student(
+    teacher: Teacher,
+    val studentFirstName: String,
+    val studentLastName: String ,
+    val studentScore: Int
+) {
 
-data class Students(
+    private var studentTeacherName = teacher.teacherName()
+    open fun studentInfo() {
+        println(
+            """ 
+            Student Name is:$studentFirstName $studentLastName with Score: $studentScore . The teacher name is :$studentTeacherName
+        """.trimIndent()
+        )
+    }
 
-    val studentId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val gradeLevel : Int = 0,
-    val teacherName : String = "Undefined",
-    val courseGrade : Float = 0.0f,
-
-)
+}

@@ -1,11 +1,9 @@
 
+open class Teacher(private var teacherFirstName : String, private var teacherFamilyName:String, manager: Manager) {
 
-data class Teacher(
+    fun teacherName():String{
+        return "$teacherFirstName $teacherFamilyName"
+    }
 
-    val teacherId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val courseName : String = "Undefined",
-    val gradeLevel : Int = 0,
 
-)
+}
