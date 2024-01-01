@@ -5,7 +5,6 @@ open class Student(
     val studentScore: Int
 ) {
 
-    //The Students cant change teacher Name!
     private var studentTeacherName = teacher.teacherName()
     open fun studentInfo() {
         println(
