@@ -1,11 +1,14 @@
+open class Teacher : Manager(){
 
+    override var mFirstName: String = super.mFirstName
+    override var mLastName: String = super.mLastName
 
-data class Teacher(
+    open var tFirstName : String = "Undefined"
+    open var tLastName : String = "Undefined"
+    open var tCourse : String = "Android"
 
-    val teacherId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val courseName : String = "Undefined",
-    val gradeLevel : Int = 0,
+    override fun schoolMember() {
+        println("Teacher($tFirstName $tLastName) teaches $tCourse. Manager is Mr $mFirstName $mLastName ")
+    }
 
-)
+}

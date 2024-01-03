@@ -1,12 +1,18 @@
-import org.intellij.lang.annotations.Identifier
+open class Student : Teacher(){
 
-data class Students(
+    override var mFirstName: String = super.mFirstName
+    override var mLastName: String = super.mLastName
+    override var tFirstName: String = super.tFirstName
+    override var tLastName: String= super.tLastName
+    override var tCourse: String = super.tCourse
 
-    val studentId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val gradeLevel : Int = 0,
-    val teacherName : String = "Undefined",
-    val courseGrade : Float = 0.0f,
+    var studentFirstName  = "Undefined"
+    var studentLastName  ="Undefined"
+    var studentCourse = "Undefined"
+    var studentCourseNumber = 20
 
-)
+    override fun schoolMember() {
+        println(listOf("$studentFirstName $studentLastName", studentCourse,
+            "$studentCourseNumber","$mFirstName $mLastName","$tFirstName $tLastName"))
+    }
+}

@@ -1,6 +1,11 @@
-data class Manager(
-    val managerId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined"
+open class Manager{
 
-)
+    open var mFirstName : String = "Undefined"
+    open var mLastName : String = "Undefined"
+
+    open fun schoolMember(){
+        println("Manager name of University is :$mFirstName $mLastName")
+    }
+
+
+}

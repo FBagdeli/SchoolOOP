@@ -1,32 +1,49 @@
 fun main() {
 
-    val listOfManager = listOf(
-        Manager(1,"Dariush","Pahlavi")
-    )
-    println(listOfManager)
+    val manager1  = Manager()
+    val teacher1  = Teacher()
+    val student1 = Student()
+    val student2 = Student()
+    val student3 = Student()
+    val student4 = Student()
+    manager1.mFirstName = "Abolghasem"
+    manager1.mLastName = "Ferdosi"
+    manager1.schoolMember()
 
-    val listOfTeachers = listOf(
-        Teacher(1,"Ershad","Nasri","Kotlin",3),
-        Teacher(2,"Vin","Norman","Android Developer",1),
-        Teacher(3,"Shahi","Bagdeli","C#",3),
-        Teacher(4,"Mohammad","Javad","Administrator",2),
-    )
+    teacher1.tFirstName = "Ershad"
+    teacher1.tLastName = "Nasiri"
+    teacher1.mFirstName = manager1.mFirstName
+    teacher1.mLastName = manager1.mLastName
+    teacher1.tCourse = "Kotlin"
 
-    val listOfStudents = listOf(
-        Students(1,"Farshad","Bagdeli",3,listOfTeachers[0].firstName +" "+ listOfTeachers[0].secondName,20f),
-        Students(2,"Azam","Sheikhi",3,listOfTeachers[1].firstName + listOfTeachers[1].secondName,18.5f),
-        Students(3,"Korosh","Fouladi",3,listOfTeachers[2].firstName + listOfTeachers[2].secondName,15f)
-    )
+    teacher1.schoolMember()
 
-    studentGradesList(listOfStudents)
+    student1.mFirstName = manager1.mFirstName
+    student1.mLastName = manager1.mLastName
+    student1.tFirstName = teacher1.tFirstName
+    student1.tLastName = teacher1.tLastName
+    student1.studentFirstName = "Farshad"
+    student1.studentLastName = "Bagdeli"
+    student1.studentCourse = teacher1.tCourse
+    student1.studentCourseNumber = 20
+
+    student2.studentCourseNumber = 19
+    student3.studentCourseNumber = 18
+    student4.studentCourseNumber = 17
+
+    student1.schoolMember()
+
+    val listOfStudents = listOf(student1,student2,student3,student4)
+    numbersOfStudents(listOfStudents)
+
 }
 
-fun studentGradesList(list: List<Students>){
-    val int = list.lastIndex
 
-    println("Students Grade List: ")
-    for (i in 0.. int ){
-        println("   ${list[i].firstName} ${list[i].secondName} is ${list[i].courseGrade} with ${list[i].teacherName}")
+fun numbersOfStudents(lists: List<Student>){
+
+    for (list in lists){
+        println(list.studentCourseNumber)
     }
 
 }
+
