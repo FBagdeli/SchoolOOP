@@ -2,10 +2,11 @@ fun main() {
 
     val manager1  = Manager()
     val teacher1  = Teacher()
-    val student1 = Student()
-    val student2 = Student()
-    val student3 = Student()
-    val student4 = Student()
+
+    val student2 = Student(teacher1)
+    val student3 = Student(teacher1)
+    val student4 = Student(teacher1)
+
     manager1.mFirstName = "Abolghasem"
     manager1.mLastName = "Ferdosi"
     manager1.schoolMember()
@@ -18,10 +19,9 @@ fun main() {
 
     teacher1.schoolMember()
 
-    student1.mFirstName = manager1.mFirstName
-    student1.mLastName = manager1.mLastName
-    student1.tFirstName = teacher1.tFirstName
-    student1.tLastName = teacher1.tLastName
+
+    val student1 = Student(teacher1)
+
     student1.studentFirstName = "Farshad"
     student1.studentLastName = "Bagdeli"
     student1.studentCourse = teacher1.tCourse
