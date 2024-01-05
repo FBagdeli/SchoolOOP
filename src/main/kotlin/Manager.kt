@@ -1,5 +1,5 @@
 class Manager(override var fName: String, override var lName: String, override var age: Int,
-              private var schoolName : String, private var managerId : Int) : Person(){
+               var schoolName : String,  var managerId : Int) : Person(){
 
     override fun printInfo(){
         println("""
