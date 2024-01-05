@@ -1,12 +1,16 @@
-import org.intellij.lang.annotations.Identifier
+class Student(override var fName: String, override var lName: String, override var age: Int,
+              private val studentId : Int, private val courseName : String, private val teacherOfClass :Teacher, val studentScore : Int) : Person(){
 
-data class Students(
+    override fun printInfo() {
+        println("""
+            Student Info :
+            Name : $fName $lName
+            Age : $age
+            StudentId : $studentId
+            Teacher : ${teacherOfClass.fName} ${teacherOfClass.lName}
+            CourseName : $courseName
+            StudentScore : $studentScore
+        """.trimIndent())
+    }
 
-    val studentId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val gradeLevel : Int = 0,
-    val teacherName : String = "Undefined",
-    val courseGrade : Float = 0.0f,
-
-)
+}

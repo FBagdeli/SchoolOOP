@@ -1,11 +1,18 @@
 
 
-data class Teacher(
+class Teacher(override var fName: String, override var lName: String, override var age: Int,
+              private var teacherID : Int, private var className : String) : Person(){
 
-    val teacherId : Int = 0,
-    val firstName : String = "Undefined",
-    val secondName : String = "Undefined",
-    val courseName : String = "Undefined",
-    val gradeLevel : Int = 0,
 
-)
+    override fun printInfo(){
+        println("""
+            Teacher Info :
+            Name : $fName $lName
+            Age : $age
+            Id : $teacherID
+            ClassName : $className
+        """.trimIndent())
+    }
+
+
+  }
