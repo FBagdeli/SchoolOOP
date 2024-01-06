@@ -13,13 +13,11 @@ fun main() {
     val listOfTeachers = listOf(
         Teacher("Ershad", "Nasri", 28, 101, courseName = Courses().kotlin),
         Teacher("Arash", "Kamangir", 28, 102, courseName = Courses().java),
-        Teacher("MJ", "Bag", 28, 102, courseName = Courses().android),
-    )
+        Teacher("MJ", "Bag", 28, 102, courseName = Courses().android))
 
     printStudentsOfTeacher(listOfStudents, listOfTeachers)
     println("\n")
     printTeachersOfStudent(listOfStudents, listOfTeachers)
-
 }
 
 fun printStudentsOfTeacher(studentList: List<Student>, teacherList: List<Teacher>) {
