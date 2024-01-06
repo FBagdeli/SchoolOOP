@@ -1,5 +1,5 @@
 class Student(override val fName: String, override val lName: String, override val age: Int,
-               val studentId : Int,  val courseName : String,  val teacherOfClass :Teacher, val studentScore : Int) : Person(){
+               val studentId : Int,  val courseName : List<String>, val studentScore : Int) : Person(){
 
     override fun printInfo() {
         println("""
@@ -7,7 +7,7 @@ class Student(override val fName: String, override val lName: String, override v
             Name : $fName $lName
             Age : $age
             StudentId : $studentId
-            Teacher : ${teacherOfClass.fName} ${teacherOfClass.lName}
+            
             CourseName : $courseName
             StudentScore : $studentScore
         """.trimIndent())
