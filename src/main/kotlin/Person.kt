@@ -1,8 +1,8 @@
 abstract class Person {
 
-    abstract var fName :String
-    abstract var lName : String
-    abstract var age : Int
+    abstract val fName :String
+    abstract val lName : String
+    abstract val age : Int
 
     open fun printInfo(){
 

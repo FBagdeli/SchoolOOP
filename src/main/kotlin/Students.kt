@@ -1,4 +1,4 @@
-class Student(override var fName: String, override var lName: String, override var age: Int,
+class Student(override val fName: String, override val lName: String, override val age: Int,
                val studentId : Int,  val courseName : String,  val teacherOfClass :Teacher, val studentScore : Int) : Person(){
 
     override fun printInfo() {

@@ -1,7 +1,7 @@
 
 
-class Teacher(override var fName: String, override var lName: String, override var age: Int,
-               var teacherID : Int,  var className : String) : Person(){
+class Teacher(override val fName: String, override val lName: String, override val age: Int,
+               val teacherID : Int,  val courseName : String) : Person(){
 
 
     override fun printInfo(){
@@ -10,7 +10,7 @@ class Teacher(override var fName: String, override var lName: String, override v
             Name : $fName $lName
             Age : $age
             Id : $teacherID
-            ClassName : $className
+            ClassName : $courseName
         """.trimIndent())
     }
 
