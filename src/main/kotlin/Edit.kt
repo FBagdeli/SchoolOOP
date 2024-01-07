@@ -1,3 +1,11 @@
+// Rabetehaye Class ha baham Dg
+// Rabeteye Teacher ba DaneshAmooz yek be chand hast
+// Rabeteye DaneshAmooz ba Course yek be chand hast
+
+
+
+
+
 class Edit {
 
 
