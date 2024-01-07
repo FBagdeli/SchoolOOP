@@ -15,7 +15,7 @@ class Teacher(
             TeacherId : $primaryKey
             Name : $fName $lName
             Age : $age
-            ClassName : $courseName
+            ClassName : ${courseName.courseName}
         """.trimIndent())
     }
 

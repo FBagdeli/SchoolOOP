@@ -1,12 +1,12 @@
 class Course(
     val primaryKey: Int,
-    val course: String
+    val courseName: String
 ){
      fun printInfo() {
         println("""
             Course Info :
             CourseId : $primaryKey
-            CourseName : $course
+            CourseName : $courseName
         """.trimIndent())
     }
 }

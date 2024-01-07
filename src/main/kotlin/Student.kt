@@ -3,7 +3,7 @@ class Student(
     override val fName: String,
     override val lName: String,
     override val age: Int,
-    val courseName : Course,
+    val teacherCourse: TeacherCourses,
     val studentScore : Int
 ) : Person(){
 
@@ -13,7 +13,7 @@ class Student(
             StudentNumber : $primaryKey
             Name : $fName $lName
             Age : $age
-            CourseName : ${courseName.primaryKey}
+            Teacher and Course = ${teacherCourse.teacherName}, ${teacherCourse.courseName}
             StudentScore : $studentScore
         """.trimIndent())
     }
