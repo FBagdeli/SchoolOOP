@@ -5,7 +5,6 @@ class Teacher(
     override val fName: String,
     override val lName: String,
     override val age: Int,
-    val courseName : Course
 ) : Person(){
 
 
@@ -15,7 +14,7 @@ class Teacher(
             TeacherId : $primaryKey
             Name : $fName $lName
             Age : $age
-            ClassName : ${courseName.courseName}
+            
         """.trimIndent())
     }
 

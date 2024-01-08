@@ -3,16 +3,15 @@ fun main() {
     val manager = Manager(301, "Steve", "Jobs", 68, "Hagvartz", 9001)
 
     val listOfCourses = listOf(
-        Course(1, "kotlin"),
-        Course(2, "Android"),
-        Course(3, "Java"),
+        Course(0, "kotlin"),
+        Course(1, "Android"),
+        Course(2, "Java"),
     )
 
     val listOfTeachers = listOf(
-        Teacher(primaryKey = 201, "Ershad", "Nasri", 28, courseName = listOfCourses[0]),//kotlin - nasri
-        Teacher(primaryKey = 201, "Ershad", "Nasri", 28, courseName = listOfCourses[1]),//android - nasri
-        Teacher(primaryKey = 202, "Arash", "Kamangir", 28, courseName = listOfCourses[1]),//android - kamangir
-        Teacher(primaryKey = 203, "MJ", "Bag", 28, courseName = listOfCourses[2])//Java - Bag
+        Teacher(primaryKey = 201, "Ershad", "Nasri", 28),//kotlin - nasri
+        Teacher(primaryKey = 202, "Arash", "Kamangir", 28),//android - kamangir
+        Teacher(primaryKey = 203, "MJ", "Bag", 28)//Java - Bag
     )
 
     val listOfTeachersCourses = listOf(
@@ -32,32 +31,62 @@ fun main() {
         Student(primaryKey = 103, "Farshad", "Bagdeli3", 32, listOfTeachersCourses[0], 20),
         Student(primaryKey = 104, "Shah", "Pahlavi", 32, listOfTeachersCourses[1], 20),
         Student(primaryKey = 105, "NaderShah", "Afshar", 32, listOfTeachersCourses[2], 20),
-        Student(primaryKey = 106, "NaderShah", "Afshar", 32, listOfTeachersCourses[3], 20),
+        Student(primaryKey = 106, "Ali", "Daie", 32, listOfTeachersCourses[3], 20),
         Student(primaryKey = 107, "babak", "khoramdin", 32, listOfTeachersCourses[3], 20),
     )
 
+    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
     teacherCourses(listOfTeachersCourses)
 
 
 }
 
-fun teacherCourses(list: List<TeacherCourses>) {
-    var i = 0
-    var b = 1
+fun teacherCoursesStudents(list: List<TeacherCourses>, studentList: List<Student>) {
+    var b = 0
+    var z = 1
+    var s = 0
+
     for (i in list.indices) {
-        print("Mr ${list[i].teacherName} teaches ${list[i].courseName}" )
+        if (b > 0) {
+            b = 0
+            continue
+        }
+        print("Mr ${list[i].teacherName} teaches ${list[i].courseName}")
+        while (z < list.lastIndex) {
+            if (list[i].teacherName == list[z].teacherName) {
+                print(", and ${list[z].courseName}")
+                b++
+            }
+            z++
+        }
+        print("\nThe Student/Students are:")
+        for (s in studentList.indices) {
+            if (list[i].teacherName == studentList[s].teacherCourse.teacherName) print("${studentList[s].lName}, ")
+        }
 
-           for ( b in list.indices){
-               if (list[i].teacherName == list[b].teacherName ){
-                   print(" and ${list[b].courseName}")
-               }
-               if(b == list.size -1 ) {
-                   println("\n")
-                   break
-               }
-
-           }
-
+        println("\n")
     }
-
 }
+
+
+fun teacherCourses(list: List<TeacherCourses>) {
+    var b = 0
+    var z = 1
+
+    for (i in list.indices) {
+        if (b > 0) {
+            b = 0
+            continue
+        }
+        print("Mr ${list[i].teacherName} teaches ${list[i].courseName}")
+        while (z < list.lastIndex) {
+            if (list[i].teacherName == list[z].teacherName) {
+                print(" and ${list[z].courseName}")
+                b++
+            }
+            z++
+        }
+        println("\n")
+    }
+}
+
