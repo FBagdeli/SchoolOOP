@@ -1,3 +1,5 @@
+import java.lang.reflect.Array.set
+
 fun main() {
 
     val manager = Manager(301, "Steve", "Jobs", 68, "Hagvartz", 9001)
@@ -14,6 +16,7 @@ fun main() {
         Teacher(primaryKey = 203, "MJ", "Bag", 28)//Java - Bag
     )
 
+    //Dependency between Courses and Teachers
     val listOfTeachersCourses = listOf(
         TeacherCourses(listOfTeachers[0], listOfCourses[0]), // nasri - kotlin
         TeacherCourses(listOfTeachers[0], listOfCourses[1]), // nasri - android
@@ -21,10 +24,12 @@ fun main() {
         TeacherCourses(listOfTeachers[1], listOfCourses[1]), // Kamangir - android
         TeacherCourses(listOfTeachers[2], listOfCourses[2]),// Bag- java
     )
+
     // Student 101 , 102 va 103 hame ba Ostad Nasri class Kotlin gereftan
     // Student 104 ba Ostad Nasri class Android gerefte
-    //studnet 105 ba ostad Kamangir class Android gerefte
-    //student 106 va 107 ba ostad Bag class Java gerefte
+    // Studnet 105 ba ostad Kamangir class Android gerefte
+    // Student 106 va 107 ba ostad Bag class Java gerefte
+
     val listOfStudents = listOf(
         Student(primaryKey = 101, "Farshad", "Bagdeli", 32, listOfTeachersCourses[0], 20),
         Student(primaryKey = 102, "Farshad", "Bagdeli2", 32, listOfTeachersCourses[0], 20),
@@ -35,16 +40,47 @@ fun main() {
         Student(primaryKey = 107, "babak", "khoramdin", 32, listOfTeachersCourses[3], 20),
     )
 
-    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
-    teacherCourses(listOfTeachersCourses)
+//    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
+//    teacherCourses(listOfTeachersCourses)
+//
+//  findStudentsOfTeacherWithId(listOfTeachers[2], listOfStudents)
+
+    courseTakenByStudents(listOfCourses,listOfStudents)
+}
+
+fun courseTakenByStudents(listOfCourses: List<Course>,listOfStudent: List<Student>){
+    val string = "String"
+
+    for (i in listOfCourses.indices){
+        println("Course ${listOfCourses[i].courseName} has been taken by: ")
+        for (s in listOfStudent.indices){
+            if (listOfCourses[i].primaryKey == listOfStudent[s].teacherCourse.cFKey){
+                print("${listOfStudent[s].lName} ")
+            }
+        }
+        println("\n")
+    }
 
 
 }
 
+fun findStudentsOfTeacherWithId(teacher: Teacher, studentsList: List<Student>) {
+
+    //because we want to have access to attributes of teacher , it's better to pass
+    // Teacher as argument instead of primarykey of Teacher as Int
+
+    println("Students of Ostad ${teacher.lName} are: ")
+    for (i in studentsList.indices) {
+        if (studentsList[i].teacherCourse.tFKey == teacher.primaryKey) {
+            println(studentsList[i].lName)
+        }
+    }
+}
+
+
 fun teacherCoursesStudents(list: List<TeacherCourses>, studentList: List<Student>) {
     var b = 0
     var z = 1
-    var s = 0
 
     for (i in list.indices) {
         if (b > 0) {
