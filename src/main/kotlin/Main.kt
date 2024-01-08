@@ -40,21 +40,26 @@ fun main() {
         Student(primaryKey = 107, "babak", "khoramdin", 32, listOfTeachersCourses[3], 20),
     )
 
-//    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
-//    teacherCourses(listOfTeachersCourses)
-//
-//  findStudentsOfTeacherWithId(listOfTeachers[2], listOfStudents)
+    //Method will print what teacher teaches and whose are his student
+    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
 
-    courseTakenByStudents(listOfCourses,listOfStudents)
+    //Method will print courses or course of teacher will teach
+    teacherCourses(listOfTeachersCourses)
+
+    //Method will print Students of Teacher
+    findStudentsOfTeacherWithId(listOfTeachers[2], listOfStudents)
+
+    //Method will print course that taken by students
+    courseTakenByStudents(listOfCourses, listOfStudents)
 }
 
-fun courseTakenByStudents(listOfCourses: List<Course>,listOfStudent: List<Student>){
+fun courseTakenByStudents(listOfCourses: List<Course>, listOfStudent: List<Student>) {
     val string = "String"
 
-    for (i in listOfCourses.indices){
+    for (i in listOfCourses.indices) {
         println("Course ${listOfCourses[i].courseName} has been taken by: ")
-        for (s in listOfStudent.indices){
-            if (listOfCourses[i].primaryKey == listOfStudent[s].teacherCourse.cFKey){
+        for (s in listOfStudent.indices) {
+            if (listOfCourses[i].primaryKey == listOfStudent[s].teacherCourse.cFKey) {
                 print("${listOfStudent[s].lName} ")
             }
         }
