@@ -39,25 +39,25 @@ fun main() {
         Student(primaryKey = 106, "Ali", "Daie", 32, listOfTeachersCourses[3], 20),
         Student(primaryKey = 107, "babak", "khoramdin", 32, listOfTeachersCourses[3], 20),
     )
-//
-//    //Method will print what teacher teaches and whose are his student
-//    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
-//    println("****************************************************************")
-//    //Method will print courses or course of teacher will teach
-//    teacherCourses(listOfTeachersCourses)
-//    println("****************************************************************")
-//    //Method will print Students of Teacher
-//    findStudentsOfTeacherWithId(listOfTeachers[2], listOfStudents)
-//    println("****************************************************************")
-    //Method will print course that taken by students
-//    courseTakenByStudents(listOfCourses, listOfStudents)
 
+    //Method will print what teacher teaches and whose are his student
+    teacherCoursesStudents(listOfTeachersCourses, listOfStudents)
+    println("****************************************************************")
+    //Method will print courses or course of teacher will teach
+    teacherCourses(listOfTeachersCourses)
+    println("****************************************************************")
+    //Method will print Students of Teacher
+    findStudentsOfTeacherWithId(listOfTeachers[2], listOfStudents)
+    println("****************************************************************")
+    //Method will print course that taken by students
+    courseTakenByStudents(listOfCourses, listOfStudents)
+    println("****************************************************************")
     val listStudent = courseTakenByStudentsList(course = listOfCourses[0], listOfStudents)
     for (i in listStudent.indices) {
         print("${listStudent[i].lName} ")
     }
-
 }
+
 
 fun courseTakenByStudentsList(course: Course, listOfStudent: List<Student>): List<Student> {
     val list: MutableList<Student> = mutableListOf()
